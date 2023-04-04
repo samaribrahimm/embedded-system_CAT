@@ -1,7 +1,7 @@
-//c program to print grades for students and only admin can modify their grades
+//c program to print grades for students and only admin can modify  grades
 #include <stdio.h>
 #include <stdlib.h>
-#include "file.h"
+// #include "file.h"
  int check,i,id_admincheck,id_studentcheck ;
  int id_admin =1032002;
 void manipulate();
