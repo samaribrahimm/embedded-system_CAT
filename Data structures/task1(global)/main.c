@@ -11,8 +11,8 @@
   void display_stack(StackEntry e);
 int main(){
    int choice;
-	printf("To stack choose..1\n");
-	printf("To queue choose..2\n");
+	printf("Press 1  for stack\n");
+	printf("Press 2  for queue\n");
 
     printf("\n your choice: ");
 	scanf("%d",&choice);
