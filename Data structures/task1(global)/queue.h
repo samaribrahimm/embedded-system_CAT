@@ -1,5 +1,6 @@
 #include "Global.h"
-
+#ifndef QUEUE_H
+#define QUEUE_H
 #define QUEUE_ARRAY
  #include <stdio.h>
  #define QueueEntry char
@@ -34,3 +35,4 @@ typedef struct queue{
   int QueueSize(queue*);
   void ClearQueue(queue*);
   void TraverseQueue(queue*,void(*)(QueueEntry));
+  #endif
