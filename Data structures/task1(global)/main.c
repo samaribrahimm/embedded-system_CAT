@@ -124,9 +124,15 @@ void Stack(){
         printf("Stack Size = %d\n",StackSize(&s));
      }
 			
-            
+void display_stack(StackEntry e)
+{
+    printf("StackEntry = %d\n",e);
+}     
 			
-   
+        void display_queue(StackEntry e)
+{
+    printf("SqueueEntry = %d\n",e);
+}     
 
 
 }
