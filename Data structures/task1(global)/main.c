@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "global.h"
 #include "Queue.h"
+#include "queue.c"
  void display(QueueEntry e);
 int main(){
     queue q;
