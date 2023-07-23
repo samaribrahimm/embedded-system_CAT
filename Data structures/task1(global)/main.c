@@ -9,6 +9,7 @@
 #include"stack.c"
 void display_queue(StackEntry e);
 void display_stack(StackEntry e);
+ int num=1;
 int main(){
    int choice;
 	printf("Press 1  for stack\n");
@@ -36,7 +37,7 @@ void Queue_fun(){
      Queue q;
     CreateQueue(&q);
     QueueEntry element;
-    int num=1;
+   
    while(num){
         printf(" 1.clear \n 2.add \n 3.print all element \n 4.pop (serve) \n 5.size of Queue\n ");
         printf("\nEnter Your Order: ");
@@ -51,7 +52,7 @@ void Queue_fun(){
 			{
 				printf("Enter the element: ");
 				scanf("%d",&element);
-				Enqueue(element,&q);	
+				Append(element,&q);	
 				printf("done\n");
 
 			}
@@ -66,7 +67,7 @@ void Queue_fun(){
        else if (num==4){
         if(!QueueEmpty(&q))
 			{
-				Dequeue(&element,&q);
+				Serve(&q,&element);
 				printf("the served element: %d\n",element);				
 			}
 			else
@@ -83,8 +84,8 @@ void Stack_fun(){
     stack s;
     CreateStack(&s);
    StackEntry element;
-    int num=1;
-   while(num)
+    int cho=1;
+   while(cho){
         printf(" 1.clear \n 2.add \n 3.print all element \n 4.pop  \n 5.size of Stack\n ");
         printf("\nEnter Your Order: ");
 		scanf("%d",&num);
@@ -123,7 +124,7 @@ void Stack_fun(){
      else if(num ==5){
         printf("Stack Size = %d\n",StackSize(&s));
      }
-}	
+}	}
 void display_stack(StackEntry e)
 {
     printf("StackEntry = %d\n",e);
