@@ -7,8 +7,8 @@
 #include "queue.c"
 #include "stack.h"
 #include"stack.c"
- void display_queue(QueueEntry e);
-  void display_stack(StackEntry e);
+void display_queue(StackEntry e);
+void display_stack(StackEntry e);
 int main(){
    int choice;
 	printf("Press 1  for stack\n");
@@ -18,10 +18,10 @@ int main(){
 	scanf("%d",&choice);
 	switch(choice){
 	case 1:
-		  Stack();
+		  Stack_fun();
 		  break;
 	case 2 :
-          Queue();
+          Queue_fun();
 	      break	;	
     default:
 		printf(" Wrong Choice\n");
@@ -32,8 +32,8 @@ void display(QueueEntry e)
 {
     printf("QueueEntry = %d\n",e);
 }
-void Queue(){
-     queue q;
+void Queue_fun(){
+     Queue q;
     CreateQueue(&q);
     QueueEntry element;
     int num=1;
@@ -79,7 +79,7 @@ void Queue(){
 			
     }
 }
-void Stack(){
+void Stack_fun(){
     stack s;
     CreateStack(&s);
    StackEntry element;
@@ -123,16 +123,16 @@ void Stack(){
      else if(num ==5){
         printf("Stack Size = %d\n",StackSize(&s));
      }
-			
+}	
 void display_stack(StackEntry e)
 {
     printf("StackEntry = %d\n",e);
 }     
 			
-        void display_queue(StackEntry e)
+ void display_queue(StackEntry e)
 {
     printf("SqueueEntry = %d\n",e);
 }     
 
 
-}
+

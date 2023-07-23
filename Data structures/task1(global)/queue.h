@@ -6,33 +6,35 @@
  #define QueueEntry char
  
 #ifdef QUEUE_ARRAY
- typedef struct queue{
+ //define Queue
+typedef struct queue
+{
 	int front;
 	int rear;
 	int size;
 	QueueEntry entry[MAXQUEUE];
- }queue;
- 
+}Queue;
 #else
- typedef struct queuenode{
- QueueEntry entry;
- struct queuenode* next;
- }queuenode;
- 
-typedef struct queue{
-	queuenode* front;
-	queuenode* rear;
-	int size;
-}queue;
+ typedef struct queuenode
+{
+	QueueEntry entry;
+	struct queuenode *next;
+}QueueNode;
 
+typedef struct queue
+{
+	QueueNode *front;
+	QueueNode *rear;
+	int size;
+}Queue;
 #endif
-  void CreateQueue(queue*);
-  int QueueEmpty(queue*);
-  int QueueFull(queue*);
-  void Enqueue(QueueEntry,queue*);
-  void Dequeue(QueueEntry*,queue*);
-  void QueueTop(QueueEntry*,queue*);
-  int QueueSize(queue*);
-  void ClearQueue(queue*);
-  void TraverseQueue(queue*,void(*)(QueueEntry));
-  #endif
+void CreateQueue(Queue*);
+int QueueEmpty(Queue*);
+int QueueFull(Queue*);
+int QueueSize(Queue*);
+void Append(QueueEntry,Queue *);
+void Serve(Queue*,QueueEntry *);
+void Retrieve(Queue*,QueueEntry *);
+void ClearQueue(Queue*pq);
+void TraverseQueue(Queue*pq,void(*pf)(QueueEntry));
+#endif
