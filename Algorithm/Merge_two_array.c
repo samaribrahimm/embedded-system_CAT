@@ -1,18 +1,35 @@
 #include <stdio.h>
-#define SIZE_ARRAY 10
+#define SIZE_ARRAY1 5
+#define SIZE_ARRAY2 4
+#define SIZE_ARRAY  SIZE_ARRAY1+SIZE_ARRAY2
+void mergetwoarray(int arr1[],int arr2[]);
 void Merge_Sort(int arr[], int left, int right);
 void Print_array(int arr[], int length);
 void Merge(int arr[], int left, int right);
-
+ int arr[SIZE_ARRAY];
 int main()
 {
-    int arr[SIZE_ARRAY] = {8, 5, 11, 4, 12, 12, 35, 1, 32, 2};
-    printf("array before sort  ");
-    Print_array(arr, SIZE_ARRAY);
+    int arr1[SIZE_ARRAY1] = {1, 4, 6, 9, 15};
+    int arr2[SIZE_ARRAY2] ={2,5,8,10}; 
+   printf("Input first array   ");
+   Print_array(arr1, SIZE_ARRAY1);
+    printf("Input Second array  ");
+   Print_array(arr2, SIZE_ARRAY2);
+   
+    mergetwoarray(arr1,arr2);
     Merge_Sort(arr, 0, SIZE_ARRAY - 1);
-      printf("array after sort   ");
+      printf("array after sort    ");
     Print_array(arr, SIZE_ARRAY);
     return 0;
+}
+void mergetwoarray(int arr1[],int arr2[]){
+    
+for( int i=0;i<=SIZE_ARRAY1;i++){
+    arr[i]=arr1[i];
+}
+for(int i=0;i<SIZE_ARRAY2;i++){
+    arr[i+SIZE_ARRAY1]=arr2[i];
+}
 }
 void Merge(int arr[], int left, int right)
 {
